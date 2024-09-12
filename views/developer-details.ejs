@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= developer ? developer.name : 'Details' %></title>
+</head>
+<body>
+  <div class="container">
+    <% if (developer) { %>
+      <h1><%= developer.name %> Details</h1>
+      <div class="developer-details">
+        <img src="<%= developer.logo %>" alt="Logo of <%= developer.name %>">
+        <p><strong>Established:</strong> <%= developer.established %></p>
+        <p><strong>Project:</strong> <%= developer.project %></p>
+        <p><strong>Short Description:</strong> <%= developer.shortDescription %></p>
+        <p><strong>Long Description:</strong> <%= developer.longDescription %></p>
+        <p><strong>Ongoing Projects:</strong> <%= developer.ongoingProjects %></p>
+        <p><strong>City Present:</strong> <%= developer.cityPresent %></p>
+      </div>
+    <% } else { %>
+      <p>No developer found.</p>
+    <% } %>
+
+    <h2>Details</h2>
+    <div class="detail">
+      <h3><%= details.name %></h3>
+      <img src="<%= details.imageUrl %>" alt="Image of <%= details.name %>">
+      <p><strong>By:</strong> <%= details.by %></p>
+      <p><strong>Location:</strong> <%= details.location %></p>
+      <p><strong>Price:</strong> <%= details.price %></p>
+      <p><strong>Status:</strong> <%= details.status %></p>
+    </div>
+    
+    <a href="/admin/developers">Back to Developers List</a>
+  </div>
+</body>
+</html>
